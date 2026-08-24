@@ -1,0 +1,31 @@
+# Formatting conventions of this repository. See the "Formatting" section of README.md for the
+# reasoning; the short version is that a reader should never have to unpick a nested call.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.java]
+max_line_length = 120
+ij_continuation_indent_size = 8
+# One call per line as soon as a chain does more than one thing.
+ij_java_method_call_chain_wrap = on_every_item
+ij_java_builder_methods = stream,map,filter,sorted,toList,collect,and,or
+ij_java_keep_builder_methods_indents = true
+# When arguments do not fit, every argument gets its own line.
+ij_java_call_parameters_wrap = on_every_item
+ij_java_method_parameters_wrap = on_every_item
+
+[*.{yml,yaml,json}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{mvnw,mvnw.cmd}]
+indent_size = 2
